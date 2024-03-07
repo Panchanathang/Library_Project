@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Reflection.Emit;
+using System.Drawing.Drawing2D;
 
 namespace Library_Project.UserScreen
 {
@@ -31,9 +32,7 @@ namespace Library_Project.UserScreen
                     BindGridData();
                 }
             }
-
-
-        }
+         }
         private void SearchMember()
         {
             cmd = new SqlCommand("sp_getMemberProfileByID", dbcon.GetCon());
@@ -48,10 +47,10 @@ namespace Library_Project.UserScreen
                 txtDOB.Text = dt2.Rows[0]["dob"].ToString();
                 txtContact.Text = dt2.Rows[0]["contact_no"].ToString();
                 txtEmail.Text = dt2.Rows[0]["email"].ToString();
-                ddlprovince.SelectedValue = dt2.Rows[0]["province"].ToString();
-                txtCity.Text = dt2.Rows[0]["city"].ToString().Trim();
-                txtPostalcode.Text = dt2.Rows[0]["Postalcode"].ToString();
                 txtAddress.Text = dt2.Rows[0]["address"].ToString();
+                txtCity.Text = dt2.Rows[0]["city"].ToString().Trim();
+                ddlprovince.SelectedValue = dt2.Rows[0]["province"].ToString();
+                txtPostalcode.Text = dt2.Rows[0]["Postalcode"].ToString();
                 txtUserID.Text = dt2.Rows[0]["member_id"].ToString();
                 txtOldPassword.Text = dt2.Rows[0]["password"].ToString();
                 Session["pwd"] = dt2.Rows[0]["password"].ToString();
@@ -83,6 +82,7 @@ namespace Library_Project.UserScreen
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
+
             if (Session["username"].ToString() == "" || Session["username"] == null)
             {
                 Response.Write("<script>alert('Session Expired Login Again');</script>");
@@ -90,7 +90,7 @@ namespace Library_Project.UserScreen
             }
             else
             {
-                if (checkvalidation())
+                if (Checkvalidation())
                 {
                     UpdateUserProfile();
 
@@ -102,19 +102,22 @@ namespace Library_Project.UserScreen
             }
         }
 
-        private void UpdateUserProfile()
+
+private void UpdateUserProfile()
         {
             cmd = new SqlCommand("sp_UpdateMember_Profile", dbcon.GetCon());
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@full_name", txtFullName.Text);
             cmd.Parameters.AddWithValue("@dob", txtDOB.Text);
             cmd.Parameters.AddWithValue("@contact_no", txtContact.Text);
             cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-            cmd.Parameters.AddWithValue("@province", ddlprovince.SelectedItem.Text);
-            cmd.Parameters.AddWithValue("@city", txtCity.Text);
-            cmd.Parameters.AddWithValue("@Postalcode", txtPostalcode.Text);
             cmd.Parameters.AddWithValue("@address", txtAddress.Text);
+            cmd.Parameters.AddWithValue("@city", txtCity.Text);
+            cmd.Parameters.AddWithValue("@province", ddlprovince.SelectedItem.Text);
+            cmd.Parameters.AddWithValue("@Postalcode", txtPostalcode.Text);
             cmd.Parameters.AddWithValue("@member_id", Session["mid"].ToString());
+
             if (txtNewPassword.Text != string.Empty)
             {
                 cmd.Parameters.AddWithValue("@password", txtNewPassword.Text);
@@ -128,6 +131,8 @@ namespace Library_Project.UserScreen
             {
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", "swal('Success','Your Profile updated successfully','success')", true);
                 Response.Redirect("UserHome.aspx");
+                SearchMember();
+
             }
             else
             {
@@ -136,7 +141,7 @@ namespace Library_Project.UserScreen
             dbcon.CloseCon();
         }
 
-        private bool checkvalidation()
+        private bool Checkvalidation()
         {
             if (txtFullName.Text != string.Empty && txtEmail.Text != string.Empty && txtDOB.Text != string.Empty)
             {

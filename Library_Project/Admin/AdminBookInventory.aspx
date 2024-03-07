@@ -13,7 +13,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 font-weight-normal">
+            <div class="col-md-5 font-weight-normal">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
@@ -28,7 +28,7 @@
                             <div class="col">
                                 <center>
                                     <%--<img id="imgview" src="../Imgs/book1.png" height="90" width="90" alt="" />--%>
-                                    <asp:Image ID="ImgPhoto" ImageUrl="~/Imgs/book1.png" runat="server" Height="90" Width="90" alt="" />
+                                    <asp:Image ID="ImgPhoto" ImageUrl="../Imgs/book1.png" runat="server" Height="90" Width="90" alt="" />
                                 </center>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <asp:TextBox ID="txtBookID" CssClass="form-control" runat="server"></asp:TextBox>
-                                        <asp:Button ID="btnGo" runat="server" Text="GO" CssClass="form-control btn btn-primary" OnClick="btnGo_Click" />
+                                        <asp:Button ID="btnGo" runat="server" Text="Go" CssClass="form-control btn btn-primary" OnClick="btnGo_Click" />
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +211,7 @@
 
 
 
-            <div class="col-md-6">
+            <div class="col-md-7">
 
                 <div class="card">
 

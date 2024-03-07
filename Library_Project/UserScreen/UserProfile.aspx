@@ -47,7 +47,7 @@
                             <div class="col-md-6">
                                 <label>Contact No</label>
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtContact" CssClass="form-control" runat="server" placeholder="Contact No" TextMode="Number"></asp:TextBox>
+                                    <asp:TextBox ID="txtContact" CssClass="form-control" runat="server" placeholder="Contact No"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -89,7 +89,7 @@
                             <div class="col-md-4">
                                 <label>Postalcode</label>
                                 <div class="form-group">
-                                    <asp:TextBox class="form-control" ID="txtPostalcode" runat="server" placeholder="Postalcode" TextMode="Number"></asp:TextBox>
+                                    <asp:TextBox class="form-control" ID="txtPostalcode" runat="server" placeholder="Postalcode"></asp:TextBox>
                                 </div>
                             </div>
                         </div>

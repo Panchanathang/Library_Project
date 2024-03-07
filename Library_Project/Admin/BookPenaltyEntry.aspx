@@ -89,6 +89,10 @@
                 margin-bottom: 20px;
             }
         }
+        .auto-style1 {
+            width: 193px;
+            height: 53px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -138,14 +142,16 @@
 
                         <div class="col-50">
                             <h3>Payment</h3>
-                            <label for="fname">Accepted Cards</label>
+                            <label for="fname">Payments options</label>
                             <div class="icon-container">
                                 <i> <img src="../Imgs/visa.png"  width="30" height="30" /></i>
                                 <i>&nbsp; </i>
                                 
                                 <i> <img src="../Imgs/master.jpg"  width="30" height="30" /></i>
                                 <i>&nbsp; </i>
-                                <i>  <img src="../Imgs/Amex.jpg" width="30" height="30"/> </i>
+                                <i>  <img src="../Imgs/Amex.jpg" width="30" height="30"/>
+                                <i>&nbsp; </i>
+                                <img class="auto-style1" src="../Imgs/paypal.png" /></i><br />
                               
                             </div>
                             <label for="cname">Amount</label>
@@ -184,10 +190,18 @@
 
                     <label>
 
-                        <asp:CheckBox ID="chkboxSameasAddress" runat="server" Checked="true" />Shipping address same as billing
+                    <asp:CheckBox ID="chkboxSameasAddress" runat="server" Checked="true" />Shipping address same as billing
                     </label>
 
                     <asp:Button ID="btnsubmit" runat="server" class="btn btn-success" Text="Continue to checkout" OnClick="btnsubmit_Click" ValidationGroup="paymentbtn" />
+<br />
+<br />
+<%--                    <asp:Button ID="btnpaypal" runat="server" class="btn btn-warning" Text="Continue to Paypal" OnClick="btnNext_Click" ValidationGroup="paymentbtn" />--%>
+                    <a href="https://www.paypal.com/ca/signin" class="btn btn-warning" id="btnpaypal">Continue to Paypal</a>
+
+                                   
+                <BR />
+                    <BR />
 
                 </div>
             </div>

@@ -1,0 +1,32 @@
+﻿.footerlinks {
+    color: #ffffff;
+    text-decoration: none !important;
+}
+
+    .footerlinks:hover {
+        color: #ffd800;
+    }
+
+#footer1 {
+    background: #762b00;
+}
+
+#footer2 {
+    background: #531f00;
+}
+
+.navbar {
+    background-color: brown; /* Set the background color to brown */
+    padding: 5px; /* Add some padding for better appearance */
+    color: white; /* Add other styles as needed */
+}
+
+#create-account {
+    background-color: #f0f0f0; /* Background color */
+    padding: 10px; /* Padding to give some space around the text */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Box shadow for a subtle elevation effect */
+    text-align: center; /* Center-align the text */
+    font-family: Arial, sans-serif; /* Specify font family */
+    color: #333; /* Text color */
+}

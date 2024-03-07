@@ -75,12 +75,18 @@
     <Content Include="Admin\BookPenaltyEntry.aspx" />
     <Content Include="Admin\Penalty.aspx" />
     <Content Include="Admin\Report.aspx" />
+    <Content Include="Admin\Script.js" />
     <Content Include="Admin\UpdateMemberDetails.aspx" />
     <Content Include="Admin\ViewBooks.aspx" />
     <Content Include="book_img\1596392.png" />
     <Content Include="book_img\add-user.png" />
     <Content Include="book_img\ASP.NET Tutorial-2023 50.png" />
     <Content Include="book_img\asp.PNG" />
+    <Content Include="book_img\b1.jpg" />
+    <Content Include="book_img\b2.jpg" />
+    <Content Include="book_img\b3.jpg" />
+    <Content Include="book_img\b4.jpg" />
+    <Content Include="book_img\b5.jpg" />
     <Content Include="book_img\book2.png" />
     <Content Include="book_img\cpp.PNG" />
     <Content Include="book_img\icons8-books-emoji-48.png" />
@@ -93,9 +99,11 @@
     <Content Include="Bootstrap\js\jquery-3.3.1.slim.min.js" />
     <Content Include="Bootstrap\js\popper.min.js" />
     <Content Include="Contactus.aspx" />
+    <Content Include="css\StyleSheet.css" />
     <Content Include="datatable\css\jquery.dataTables.min.css" />
     <Content Include="datatable\js\jquery.dataTables.min.js" />
     <Content Include="default.aspx" />
+    <Content Include="DisclaimerPage.aspx" />
     <Content Include="ErrorPage.aspx" />
     <Content Include="fontawesome\fontawesome-free-6.5.1-web\css\all.css" />
     <Content Include="fontawesome\fontawesome-free-6.5.1-web\css\all.min.css" />
@@ -2171,26 +2179,44 @@
     <Content Include="fontawesome\fontawesome-free-6.5.1-web\svgs\solid\yin-yang.svg" />
     <Content Include="fontawesome\fontawesome-free-6.5.1-web\svgs\solid\z.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Imgs\Admin-icon.png" />
+    <Content Include="Imgs\adminuser.png" />
     <Content Include="Imgs\Amex.jpg" />
+    <Content Include="Imgs\book-online.png" />
     <Content Include="Imgs\book1.png" />
     <Content Include="Imgs\Bookk.PNG" />
+    <Content Include="Imgs\books.png" />
+    <Content Include="Imgs\books1.png" />
     <Content Include="Imgs\booksdeal1.jpg" />
     <Content Include="Imgs\booksdeal2.jpg" />
     <Content Include="Imgs\booksdeal3.jpg" />
     <Content Include="Imgs\collections.png" />
     <Content Include="Imgs\contactus.jpg" />
+    <Content Include="Imgs\defaulters-list.png" />
+    <Content Include="Imgs\digital-data.png" />
+    <Content Include="Imgs\digital-inventory.png" />
     <Content Include="Imgs\facebook.jpg" />
+    <Content Include="Imgs\generaluser.png" />
+    <Content Include="Imgs\home-bg.jpg" />
+    <Content Include="Imgs\in-homepage-banner.jpg" />
     <Content Include="Imgs\insta.jpg" />
+    <Content Include="Imgs\library.png" />
     <Content Include="Imgs\master.jpg" />
+    <Content Include="Imgs\paypal.png" />
+    <Content Include="Imgs\publisher.png" />
+    <Content Include="Imgs\search-online.png" />
+    <Content Include="Imgs\sign-up.png" />
     <Content Include="Imgs\twitter.png" />
     <Content Include="Imgs\user.png" />
     <Content Include="Imgs\visa.png" />
+    <Content Include="Imgs\writer.png" />
     <Content Include="Login.aspx" />
     <Content Include="Logoimg\404Page.gif" />
     <Content Include="Logoimg\admin.png" />
     <Content Include="Logoimg\logo.png" />
     <Content Include="Logoimg\sign_up.png" />
     <Content Include="Logoimg\user.png" />
+    <Content Include="Newspage.aspx" />
     <Content Include="signout.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="SlideImg\LIBimg1.jpg" />
@@ -2208,6 +2234,8 @@
     <Content Include="UserScreen\UserProfile.aspx" />
     <Content Include="UserScreen\uViewBook.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="Whatsnewpage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\Addauthor.aspx.cs">
@@ -2302,6 +2330,13 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DisclaimerPage.aspx.cs">
+      <DependentUpon>DisclaimerPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DisclaimerPage.aspx.designer.cs">
+      <DependentUpon>DisclaimerPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2318,6 +2353,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Newspage.aspx.cs">
+      <DependentUpon>Newspage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Newspage.aspx.designer.cs">
+      <DependentUpon>Newspage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="signout.aspx.cs">
@@ -2382,6 +2424,20 @@
     </Compile>
     <Compile Include="UserScreen\uViewBook.aspx.designer.cs">
       <DependentUpon>uViewBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Whatsnewpage.aspx.cs">
+      <DependentUpon>Whatsnewpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Whatsnewpage.aspx.designer.cs">
+      <DependentUpon>Whatsnewpage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

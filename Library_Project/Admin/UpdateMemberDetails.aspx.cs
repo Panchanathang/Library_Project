@@ -190,9 +190,7 @@ namespace Library_Project.Admin
             cmd.Parameters.AddWithValue("@address", updatetxtAddress.Text);
             cmd.Parameters.AddWithValue("@city", updatetxtcity.Text);
             cmd.Parameters.AddWithValue("@province", updateddlprovince.SelectedItem.Text);
-            
             cmd.Parameters.AddWithValue("@postalcode", updatetxtpostalcode.Text);
-
             cmd.Parameters.AddWithValue("@member_id", ID);
             dbcon.OpenCon();
             cmd.ExecuteNonQuery();

@@ -530,7 +530,7 @@ END
 GO
             
 -------------------------------------
-
+SELECT book_id as ID from book_master_tbl
 SELECT max(book_id)as ID from book_master_tbl
 
 ---------------------------------------BOOK INVENTORY ---------------------
@@ -732,7 +732,7 @@ cvv nvarchar(50)
 
 
 
-CREATE PROCEDURE sp_InsertPenaltyDetails
+ALTER PROCEDURE sp_InsertPenaltyDetails
 (
 @book_id nvarchar(50), 
 @member_id nvarchar(50), 
@@ -761,7 +761,7 @@ expmonth, expyear, cvv)
 
 Values
 
-(@book_id, @member_id, @member_fullname, @PenaltyAmount, GETDATE(), 'Paid' , @email ,
+(@book_id, @member_id, @member_fullname, @PenaltyAmount, GETDATE(), 'paid' , @email ,
 @full_address, @city, @province, @postalcode, @paymentoption, @nameoncard, @cardnumber, @expmonth, 
 @expyear, @cvv)
 
@@ -778,13 +778,15 @@ CREATE PROCEDURE sp_getMemberProfileByID
 )
 AS
 BEGIN
-SELECT member_id, full_name, dob, contact_no, email, address, city, province,  Postalcode,  password, account_status from
-member_master_tbl WHERE member_id = @member_id and account_status = 'Active'
+SELECT member_id, full_name, dob, contact_no, email, address, city, 
+province,  Postalcode,  password, account_status from
+member_master_tbl WHERE member_id = @member_id and 
+account_status = 'Active'
 END
 GO
 ----
-
-ALTER Procedure sp_UpdateMember_Profile
+SELECT * FROM member_master_tbl
+CREATE Procedure sp_UpdateMember_Profile
 (
 @full_name nvarchar (50),
 @dob nvarchar (50),
@@ -867,18 +869,13 @@ GO
 
 
 
+ALTER PROCEDURE sp_PenaltyDetails_forAdmin
 
-
-
-
-CREATE PROCEDURE sp_PenaltyDetails_forAdmin
-(
-@member_id nvarchar(50)
-)
 AS
 BEGIN
 SELECT t1.member_fullname, t1.book_id, t2.book_name, t1.PenaltyAmount, t1.PenaltyPaymentDate, t1.PenaltyStatus from BookPenaltyRecord AS t1 
 INNER JOIN book_master_tbl as t2 on t1.book_id = t2.book_id
-WHERE member_id = @member_id
 END
 GO
+--
+
